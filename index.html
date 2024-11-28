@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng tạo văn bản</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Ứng dụng tạo văn bản</h1>
+  <div class="container">
+    <form id="input-form">
+      <!-- Cột trái -->
+      <div class="column">
+        <!-- Tiền sử bản thân -->
+        <h2>Tiền sử bản thân</h2>
+        <label for="con">Con:</label>
+        <input type="text" id="con" name="con" placeholder="Nhập số thứ tự con, ví dụ: 1/1">
+
+        <label for="sanh">Sanh:</label>
+        <select id="sanh" name="sanh">
+          <option value="">--Chọn--</option>
+          <option value="thường">Thường</option>
+          <option value="mổ">Mổ</option>
+        </select>
+
+        <div id="ly-do-sanh-mo-container" style="display: none;">
+          <label for="ly-do-sanh-mo">Lý do sanh mổ:</label>
+          <input type="text" id="ly-do-sanh-mo" name="ly-do-sanh-mo" placeholder="Nhập lý do sanh mổ">
+        </div>
+
+        <label for="du-thang">Đủ tháng:</label>
+        <select id="du-thang" name="du-thang">
+          <option value="">--Chọn--</option>
+          <option value="có">Có</option>
+          <option value="không">Không</option>
+        </select>
+
+        <div id="tuan-tuoi-thai-container" style="display: none;">
+          <label for="tuan-tuoi-thai">Số tuần tuổi thai:</label>
+          <input type="number" id="tuan-tuoi-thai" name="tuan-tuoi-thai" placeholder="Nhập số tuần tuổi thai">
+        </div>
+
+        <label for="biet-di">Biết đi (tháng):</label>
+        <input type="number" id="biet-di" name="biet-di" placeholder="Nhập số tháng">
+
+        <label for="biet-noi">Biết nói từ đơn (tháng):</label>
+        <input type="number" id="biet-noi" name="biet-noi" placeholder="Nhập số tháng">
+
+        <label for="benh-ly-lien-quan">Các bệnh lý liên quan:</label>
+        <input type="text" id="benh-ly-lien-quan" name="benh-ly-lien-quan" placeholder="Nhập thông tin">
+
+        <label for="dang-di-hoc">Đang đi học:</label>
+        <input type="text" id="dang-di-hoc" name="dang-di-hoc" placeholder="Nhập thông tin">
+      </div>
+
+      <!-- Cột phải -->
+      <div class="column">
+        <!-- Các trường thông tin ban đầu -->
+        <h2>Thông tin hiện tại</h2>
+        <label for="ten-goi">Đáp ứng với tên gọi:</label>
+        <input type="text" id="ten-goi" name="ten-goi" placeholder="Nhập thông tin">
+
+        <label for="tiep-xuc-mat">Tiếp xúc mắt:</label>
+        <input type="text" id="tiep-xuc-mat" name="tiep-xuc-mat" placeholder="Nhập thông tin">
+
+        <label for="chu-y-lien-ket">Chú ý liên kết:</label>
+        <input type="text" id="chu-y-lien-ket" name="chu-y-lien-ket" placeholder="Nhập thông tin">
+
+        <label for="nho-bang">Nhờ bằng:</label>
+        <input type="text" id="nho-bang" name="nho-bang" placeholder="Ví dụ: chỉ tay, nắm tay">
+
+        <!-- Thay đổi các trường thành select với "-" và "+" -->
+        <label for="chi-de-doi">Chỉ để đòi:</label>
+        <select id="chi-de-doi" name="chi-de-doi">
+          <option value="">--Chọn--</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+        </select>
+
+        <label for="khoe">Khoe:</label>
+        <select id="khoe" name="khoe">
+          <option value="">--Chọn--</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+        </select>
+
+        <label for="chi-de-chia-se">Chỉ để chia sẻ:</label>
+        <select id="chi-de-chia-se" name="chi-de-chia-se">
+          <option value="">--Chọn--</option>
+          <option value="+">+</option>
+          <option value="-">-</option>
+        </select>
+
+        <label for="choi-gia-bo">Chơi giả bộ:</label>
+        <input type="text" id="choi-gia-bo" name="choi-gia-bo" placeholder="Nhập thông tin">
+
+        <label for="be-thich-choi">Bé thích chơi:</label>
+        <input type="text" id="be-thich-choi" name="be-thich-choi" placeholder="Nhập đồ chơi bé thích">
+
+        <label for="ken-an">Kén ăn:</label>
+        <input type="text" id="ken-an" name="ken-an" placeholder="Nhập thông tin (có/không)">
+
+        <label for="kho-ngu">Khó ngủ:</label>
+        <input type="text" id="kho-ngu" name="kho-ngu" placeholder="Nhập thông tin (có/không)">
+
+        <h2>Đánh giá các lĩnh vực phát triển</h2>
+        <label for="van-dong-tho">Vận động thô (~tháng):</label>
+        <input type="number" id="van-dong-tho" name="van-dong-tho" placeholder="Nhập số tháng">
+
+        <label for="ngon-ngu-cam-nhan">Ngôn ngữ cảm nhận (~tháng):</label>
+        <input type="number" id="ngon-ngu-cam-nhan" name="ngon-ngu-cam-nhan" placeholder="Nhập số tháng">
+
+        <label for="ngon-ngu-dien-dat">Ngôn ngữ diễn đạt (~tháng):</label>
+        <input type="number" id="ngon-ngu-dien-dat" name="ngon-ngu-dien-dat" placeholder="Nhập số tháng">
+
+        <label for="giai-quyet-van-de">Giải quyết vấn đề (~tháng):</label>
+        <input type="number" id="giai-quyet-van-de" name="giai-quyet-van-de" placeholder="Nhập số tháng">
+
+        <label for="tu-lap">Tự lập (~tháng):</label>
+        <input type="number" id="tu-lap" name="tu-lap" placeholder="Nhập số tháng">
+
+        <label for="xa-hoi">Xã hội (~tháng):</label>
+        <input type="number" id="xa-hoi" name="xa-hoi" placeholder="Nhập số tháng">
+      </div>
+    </form>
+  </div>
+
+  <button type="button" id="generate-button">Tạo văn bản</button>
+
+  <h2>Xem trước văn bản</h2>
+  <!-- Thêm hai textarea riêng biệt -->
+  <h3>Tiền sử bản thân</h3>
+  <textarea id="tien-su-text" rows="8"></textarea>
+
+  <h3>Thông tin hiện tại</h3>
+  <textarea id="output-text" rows="15"></textarea>
+
+  <button type="button" id="copy-button">Sao chép toàn bộ văn bản</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
